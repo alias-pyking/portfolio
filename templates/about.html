@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load markdown_deux_tags %}
+{% block title %}
+Shubham-About
+{% endblock title %}
+
+{% block content %}
+<div class="col-xl-10">
+	<div class="content-column-content">
+	  {{ about.content | markdown | linebreaks }}
+	</div>
+</div>
+{% endblock content %}
