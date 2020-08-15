@@ -20,27 +20,36 @@
 	<!-- theme stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
 	<!-- Custom stylesheet - for your changes-->
-	<link rel="stylesheet" href="{% static 'css/custom.css' %}"
-	<!-- Favicon-->
-	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}" >
 </head>
+<style>
+	.filters{
+		display: none;
+		margin-bottom: 10px;
+	}
+	.invisible {
+		visibility: hidden;
+		display: none;
+		transform: translate(0.3s);
+	}
+</style>
 <body>
 	<div id="all">
 		<div class="container-fluid">
 		  <div class="row row-offcanvas row-offcanvas-left"> 
 			<!--   *** SIDEBAR ***-->
-			<div id="sidebar" class="col-md-4 col-lg-3 sidebar-offcanvas">
+			<div id="sidebar" class="col-md-4 col-lg-3 sidebar-offcanvas stick-sidebar">
 			  <div class="sidebar-content">
 				<h1 class="sidebar-heading"> <a href="{% url 'home' %}">Shubham Kumar</a></h1>
 				<p class="sidebar-p">I am a computer science student and a fullstack web devloper, Currently working as an intern in a startup.</p>
 				<p class="sidebar-p">Always Learning,Developing or solving.</p>
 				<ul class="sidebar-menu">
 					<!-- Link-->
-					<li class="sidebar-item"><a href="{% url 'home' %}" class="sidebar-link active">Home</a></li>
+					<li class="sidebar-item"><a href="{% url 'home' %}" class="sidebar-link" id="home">Home</a></li>
 					<!-- Link-->
-					<li class="sidebar-item"><a href="{% url 'about' %}" class="sidebar-link">About</a></li>
+					<li class="sidebar-item"><a href="{% url 'about' %}" class="sidebar-link" id="about">About</a></li>
 					<!-- Link-->
-					<li class="sidebar-item"><a href="{% url 'contact' %}" class="sidebar-link">Get in touch</a></li>
+					<li class="sidebar-item"><a href="{% url 'contact' %}" class="sidebar-link" id="contact">Get in touch</a></li>
 				</ul>
 				<p class="social">
 					<a href="https://twitter.com/shubham__sks" data-animate-hover="pulse" class="external twitter">
@@ -58,16 +67,25 @@
 			<!--   *** SIDEBAR END ***  -->
 			<!--   *** PORTFOLIO ***-->
 			<div class="col-md-8 col-lg-9 content-column">
+				<div class="filters" id="pfilters">
+					<button class="btn btn-dark" id="all-filter">All</button>
+					 <button id="django-filter" class="btn">Django</button>
+					<button class="btn" id="react-filter">React</button> 
+					<button class="btn" id="android-filter">Android</button>
+					<button class="btn" id="ai-filter">ML/AI</button>
+				</div>
 			  <div class="small-navbar d-flex d-md-none">
 				<button type="button" data-toggle="offcanvas" class="btn btn-outline-primary"> <i class="fa fa-align-left mr-2"></i>Menu</button>
 				<h1 class="small-navbar-heading"> <a href="{% url 'home' %}">Shubham </a></h1>
 			  </div>
 			  <div class="row">
+
 				{% if messages %}
 					{% for message in messages %}
 				<p{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</p>
 					{% endfor %}
 				{% endif %}
+				
 				{% block content %}
 				{% endblock content %}
 			  </div>
@@ -85,6 +103,7 @@
 		<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
 		<script src="{% static 'vendor/masonry-layout/masonry.pkgd.min.js' %}"></script>
 		<script src="{% static 'js/front.js' %}"></script>
+		<script src="{% static 'js/base.js' %}"></script>
 	  {% endblock javascript %}
 </body>
 </html>
