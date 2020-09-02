@@ -8,102 +8,31 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="all,follow">
-	<!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
 	<!-- Font Awesome CSS-->
 	<link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
-	<!-- Google fonts - Roboto-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
-	<!-- owl carousel-->
-	<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.css' %}">
-	<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.theme.default.css' %}">
-	<!-- theme stylesheet -->
-	<link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+	
 	<!-- Custom stylesheet - for your changes-->
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}" >
 </head>
 <style>
-	.filters{
-		display: none;
-		margin-bottom: 10px;
-	}
-	.invisible {
-		visibility: hidden;
-		display: none;
-		transform: translate(0.3s);
-	}
+
 </style>
 <body>
-	<div id="all">
-		<div class="container-fluid">
-		  <div class="row row-offcanvas row-offcanvas-left"> 
-			<!--   *** SIDEBAR ***-->
-			<div id="sidebar" class="col-md-4 col-lg-3 sidebar-offcanvas stick-sidebar">
-			  <div class="sidebar-content">
-				<h1 class="sidebar-heading"> <a href="{% url 'home' %}">Shubham Kumar</a></h1>
-				<p class="sidebar-p">I am a computer science student and a fullstack web devloper, Currently working as an intern in a startup.</p>
-				<p class="sidebar-p">Always Learning,Developing or solving.</p>
-				<ul class="sidebar-menu">
-					<!-- Link-->
-					<li class="sidebar-item"><a href="{% url 'home' %}" class="sidebar-link" id="home">Home</a></li>
-					<!-- Link-->
-					<li class="sidebar-item"><a href="{% url 'about' %}" class="sidebar-link" id="about">About</a></li>
-					<!-- Link-->
-					<li class="sidebar-item"><a href="{% url 'contact' %}" class="sidebar-link" id="contact">Get in touch</a></li>
-				</ul>
-				<p class="social">
-					<a href="https://twitter.com/shubham__sks" data-animate-hover="pulse" class="external twitter">
-						<i class="fa fa-twitter"></i></a>
-					<a href="https://github.com/shubhamsks" title="" class="external github">
-						<i class="fa fa-github"></i></a>
-					<a href="https://www.linkedin.com/in/shubham-kumar-514b1716b" data-animate-hover="pulse" class="external linkedin">
-						<i class="fa fa-linkedin"></i></a></p>
-				<div class="copyright text-center text-md-left">
-				  <p class="credit">&copy;2020 Shubham</p>
-				  <!-- Please do not remove the backlink to us, unless you support the development at http://bootstrapious.com/donate. It is part of the license conditions. Thanks for understanding :)        -->
-				</div>
-			  </div>
-			</div>
-			<!--   *** SIDEBAR END ***  -->
-			<!--   *** PORTFOLIO ***-->
-			<div class="col-md-8 col-lg-9 content-column">
-				<div class="filters" id="pfilters">
-					<button class="btn btn-dark" id="all-filter">All</button>
-					 <button id="django-filter" class="btn">Django</button>
-					<button class="btn" id="react-filter">React</button> 
-					<button class="btn" id="android-filter">Android</button>
-					<button class="btn" id="ai-filter">ML/AI</button>
-				</div>
-			  <div class="small-navbar d-flex d-md-none">
-				<button type="button" data-toggle="offcanvas" class="btn btn-outline-primary"> <i class="fa fa-align-left mr-2"></i>Menu</button>
-				<h1 class="small-navbar-heading"> <a href="{% url 'home' %}">Shubham </a></h1>
-			  </div>
-			  <div class="row">
-
-				{% if messages %}
-					{% for message in messages %}
-				<p{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</p>
-					{% endfor %}
-				{% endif %}
-				
-				{% block content %}
-				{% endblock content %}
-			  </div>
-			</div>
-			<!--   *** PORTFOLIO END ***-->
-		  </div>
+	<div class="all">
+		<div class="sidebar">
+			SideBar
 		</div>
-	  </div>
-	  <!-- Javascript -->
-	  {% block javascript %}
-		<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-		<script src="{% static 'vendor/popper.js/umd/popper.min.js' %}"> </script>
-		<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-		<script src="{% static 'vendor/jquery.cookie/jquery.cookie.js' %}"> </script>
-		<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
-		<script src="{% static 'vendor/masonry-layout/masonry.pkgd.min.js' %}"></script>
-		<script src="{% static 'js/front.js' %}"></script>
-		<script src="{% static 'js/base.js' %}"></script>
-	  {% endblock javascript %}
+		<div class="container">
+			{% block content %}
+
+			{% endblock content%}
+		</div>
+	</div>
+	{% block javascript %}
+	<script src="{% static 'js/front.js' %}"></script>
+	<script src="{% static 'js/base.js' %}"></script>
+	{% endblock javascript %}
 </body>
 </html>

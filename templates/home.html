@@ -5,16 +5,15 @@
 
 {% block content %}
 	{% for project in projects %}
-	<div class="col-md-6 col-lg-3 grid-item all-project{% if project.classes %} {{ project.classes}} {% endif %}"> 
-		<div class="box-masonry"> 
-		<a href="{{ project.get_absolute_url }}" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-		<img src="{{ project.thum.url }}" alt="" class="img-fluid"></a>
+	<div class="project card {% if project.classes %} {{ project.classes}} {% endif %}"> 
+		<a href="{{ project.get_absolute_url }}">
+		<img src="{{ project.thum.url }}">
+	</a>
 		<div class="box-masonry-text"> 
 			<h4> <a href="{{ project.get_absolute_url }}">{{ project.title }} </a></h4>
 			<div class="box-masonry-desription">
 			<p>{{ project.description }} </p>
 			</div>
-		</div>
 		</div>
 	</div>
 	{% endfor %}
