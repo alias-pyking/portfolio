@@ -32,4 +32,32 @@
 // 	contactElement.classList.add('active');
 // 	filters.style.display = 'none';
 // }
-// // applying filters
+
+// sidenavigation responsive functionality
+
+const menuButton = document.getElementById('menu-btn');
+
+menuButton.addEventListener('click', (event) => {
+	const sideBar = document.getElementById('sidebar');
+	sideBar.style.width = "50vw";
+	sideBar.style.display = "block";
+	sideBar.style.opacity = "1";
+	sideBar.style.background = "#fdfdfd";
+	sideBar.style.zIndex = "4";
+	let elements = sideBar.getElementsByTagName('a');
+	elements = Array.from(elements);
+	elements.forEach(elem => {
+		console.log('here');
+		elem.style.display = 'block';
+	});
+});
+
+function closeNav() {
+	const sideBar = document.getElementById('sidebar');
+	sideBar.style.width = "0";
+	let elements = sideBar.getElementsByTagName('a');
+	elements = Array.from(elements);
+	elements.forEach(elem => {
+		elem.style.display = 'none';
+	});
+}

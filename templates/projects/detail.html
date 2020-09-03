@@ -14,7 +14,9 @@
 	  <p class="lead">{{ project.description }}</p>
 	  <div id="main-slider" class="owl-carousel owl-theme">
 		{% for img in project.images_set.all %}
-		<div class="item"><img src="{{ img.image.url }}" alt="" class="img-fluid"></div>
+		<div class="item">
+			<img src="{{ img.image.url }}" alt="" class="img-fluid">
+		</div>
 		{% endfor %}
 	  </div>
 	 <div>

@@ -4,6 +4,7 @@
 
 
 {% block content %}
+<div class="portfolio-projects">
 	{% for project in projects %}
 	<div class="project card {% if project.classes %} {{ project.classes}} {% endif %}"> 
 		<a href="{{ project.get_absolute_url }}">
@@ -18,3 +19,5 @@
 	</div>
 	{% endfor %}
 {% endblock content %}
+	
+</div>	
