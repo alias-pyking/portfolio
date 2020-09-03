@@ -17,7 +17,7 @@ p{
 }
 .all{
 	display:grid;
-	grid-template-columns: 30vw auto;
+	grid-template-columns: 30vw 70vw;
 }
 .project{
 	width:20vw;
@@ -67,7 +67,8 @@ a{
 
 .portfolio{
 	display: grid;
-	grid-template-rows: 50px auto;
+	width: 65vw;
+	grid-template-rows: 50px auto auto;
 	margin-left: 25vw;
 	padding:16px;
 }
@@ -133,6 +134,9 @@ a{
 		width:20vw;
 		height: auto;
 	}
+	.portfolio{
+		width:  65vw;
+	}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -144,6 +148,9 @@ a{
 	.project{
 		width:30vw;
 		height: 400px;
+	}
+	.portfolio{
+		width: 65vw;
 	}
 }
 @media only screen and (max-width: 900px) {
@@ -182,6 +189,8 @@ a{
 	}
 	.portfolio{
 		margin-left: 0;
+		padding: 0;
+		width: 95vw;
 	}
 }
 
@@ -222,6 +231,8 @@ a{
 	}
 	.portfolio{
 		margin-left: 0;
+		width: 95vw;
+		padding:0;
 	}
 }
 @media only screen and (max-width: 450px) {
@@ -260,6 +271,8 @@ a{
    }
    .portfolio{
 		margin-left: 0;
+		width: 100vw;
+		padding:0;
 	}
 }
 
