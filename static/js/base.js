@@ -44,20 +44,26 @@ menuButton.addEventListener('click', (event) => {
 	sideBar.style.opacity = "1";
 	sideBar.style.background = "#fdfdfd";
 	sideBar.style.zIndex = "4";
-	let elements = sideBar.getElementsByTagName('a');
+	let links = sideBar.getElementsByTagName('a');
+	let pEls = sideBar.getElementsByTagName('p');
+	let elements = [...links, ...pEls];
 	elements = Array.from(elements);
 	elements.forEach(elem => {
-		console.log('here');
 		elem.style.display = 'block';
 	});
+	document.querySelector('.profile').style.display = 'block';
 });
 
 function closeNav() {
 	const sideBar = document.getElementById('sidebar');
 	sideBar.style.width = "0";
-	let elements = sideBar.getElementsByTagName('a');
-	elements = Array.from(elements);
+	const aEls = sideBar.getElementsByTagName('a');
+	const pEls = sideBar.getElementsByTagName('p');
+	const elements = [...aEls, ...pEls];
 	elements.forEach(elem => {
 		elem.style.display = 'none';
 	});
+	document.querySelector('.profile').style.display = 'none';
 }
+
+// 

@@ -12,12 +12,14 @@
 	<div class="content-column-content">
 	  <h1>{{ project.title }}</h1>
 	  <p class="lead">{{ project.description }}</p>
-	  <div id="main-slider" class="owl-carousel owl-theme">
-		{% for img in project.images_set.all %}
-		<div class="item">
-			<img src="{{ img.image.url }}" alt="" class="img-fluid">
-		</div>
-		{% endfor %}
+	  <div id="img-slider" data-component="slider">
+		  <div class="list">
+			{% for img in project.images_set.all %}
+			<div class="slide">
+				<img src="{{img.url}}" alt="">
+			</div>
+			{% endfor %}
+		  </div>
 	  </div>
 	 <div>
 		 {{ project.content | markdown | linebreaks}}

@@ -45,7 +45,6 @@ def contact(request):
 			messages.error(request, 'Unable to send email make sure all the fields are correct')
 			return redirect('contact')
 	context = {
-		'form': form_class,
 		'contact': ContactDescription.objects.latest('timestamp'),
 		}
 	return render(request,'contact.html',context=context)
