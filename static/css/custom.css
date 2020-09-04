@@ -21,6 +21,7 @@
 	transition: 0.6s ease;
 	border-radius: 0 3px 3px 0;
 	user-select: none;
+	background:rgba(0,64,128,.2);
 }
 .next {
 	right: 0;
@@ -219,9 +220,7 @@ a{
 }
 
 .portfolio{
-	display: grid;
 	width: 65vw;
-	grid-template-rows: 50px auto auto;
 	margin-left: 25vw;
 	padding:16px;
 }
@@ -274,6 +273,12 @@ a{
 }
 .menu:focus{
 	outline:none;
+}
+.menu .one{
+	width: 40px;
+}
+.menu .two{
+	width: 25px;
 }
 .top-bar{
 	display: none;
@@ -340,14 +345,21 @@ a{
 	.sidebar .closebtn{
 		position: absolute;
 		top: 0;
+		font-weight: bolder;
 		right: 25px;
 		font-size: 36px;
 		margin-left: 50px;
+		margin-bottom: 10px;
 	}
 	.top-bar{
 		display: flex;
 		font-weight: bolder;
 		justify-content: space-between;
+		position: sticky;
+		top: 0;
+		left: 0;
+		background: #fdfdfd;
+		z-index: 1;
 	}	
 	.portfolio-projects{
 		display: grid;
@@ -361,7 +373,9 @@ a{
 	}
 	.menu{
 		display: block;
-		height: 25px;
+		height: 50px;
+		width: 50px;
+		margin-left: 20px;
 	}
 	.portfolio{
 		margin-left: 0;
@@ -405,8 +419,12 @@ a{
 		display: flex;
 		font-weight: bolder;
 		justify-content: space-between;
-	}
-	
+		position: sticky;
+		top: 0;
+		left: 0;
+		background: #fdfdfd;
+		z-index: 1;
+	}	
 	.portfolio-projects{
 		display: grid;
 		grid-template-columns: auto auto;
@@ -466,7 +484,12 @@ a{
 		display: flex;
 		font-weight: bolder;
 		justify-content: space-between;
-	}
+		position: sticky;
+		top: 0;
+		left: 0;
+		background: #fdfdfd;
+		z-index: 1;
+	}	
 
    .project{
 	   width: 90vw;
