@@ -32,14 +32,14 @@
 			</div>
 			<div class="sidebar-links">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<a href="/" class="active">Portfolio</a>
-				<a href="/about">About</a>
-				<a href="/contact">Get in Touch</a>
+				<a href="/" class="sidebar-link" id="home">Portfolio</a>
+				<a href="/about" class="sidebar-link" id="about">About</a>
+				<a href="/contact" class="sidebar-link" id="contact">Get in Touch</a>
 			</div>
 			<div class="contact-links">
-				<a href="https://github.com/shubhamsks"><i class="fa fa-github"></i></a>
-				<a href="https://github.com/shubhamsks"><i class="fa fa-linkedin"></i></a>
-				<a href="https://github.com/shubhamsks"><i class="fa fa-twitter"></i></a>
+				<a href="https://github.com/shubhamsks" target="_blank"><i class="fa fa-github"></i></a>
+				<a href="https://linkedin.com/in/shubham--sk" target="_blank"><i class="fa fa-linkedin"></i></a>
+				<a href="https://twitter.com/shubham__sks" target="_blank"><i class="fa fa-twitter"></i></a>
 			</div>
 		</div>
 		<div class="portfolio">
@@ -55,15 +55,23 @@
 					</h2>
 				</div>
 			</div>
-			<div class="navbar">
-				<button id="all" class="badge active">All</button>
-				<button id="django" class="badge">Django</button>
-				<button id="react" class="badge">React</button>
-				<button id="android" class="badge">Android</button>
-				<button id="ai" class="badge">AI/ML</button>
+			<div class="navbar" id='filters'>
+				<button id="all-filter" class="badge active">All</button>
+				<button id="django-filter" class="badge">Django</button>
+				<button id="react-filter" class="badge">React</button>
+				<button id="android-filter" class="badge">Android</button>
+				<button id="ai-filter" class="badge">AI/ML</button>
 
 			</div>
 			<div class="container">
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-{{message.tags}}">
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+							{{ message}}
+						</div>
+					{% endfor %}
+				{% endif %}
 				{% block content %}
 
 				{% endblock content%}

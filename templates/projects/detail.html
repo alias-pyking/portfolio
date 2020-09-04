@@ -12,14 +12,14 @@
 	<div class="content-column-content">
 	  <h1>{{ project.title }}</h1>
 	  <p class="lead">{{ project.description }}</p>
-	  <div id="img-slider" data-component="slider">
-		  <div class="list">
-			{% for img in project.images_set.all %}
-			<div class="slide">
-				<img src="{{img.url}}" alt="">
-			</div>
-			{% endfor %}
-		  </div>
+	  <div id="img-slider">
+		{% for img in project.images_set.all %}
+		<div class="slide fade">
+			<img src="{{ img.image.url }}" alt="" class="img-fluid">
+		</div>
+		{% endfor %}
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 	  </div>
 	 <div>
 		 {{ project.content | markdown | linebreaks}}
