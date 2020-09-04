@@ -75,7 +75,9 @@ p{
 	height: fit-content;
 	display: block;
 }
-
+.text-content{
+	margin-left: 10px;
+}
 .alert{
 	position: absolute;
 	width: 65vw;
