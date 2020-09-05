@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load markdown_deux_tags %}
+{% block title %}
+Shubham-Experience
+{% endblock title %}
+
+{% block content %}
+<div class="text-content">
+	<div>
+	  {% for experience in experiences %}
+	  <div>
+		  {{ experience.content | markdown | linebreaks}}
+	  </div>
+	  <hr>
+	  {% endfor %}
+	</div>
+</div>
+{% endblock content %}

@@ -104,6 +104,14 @@ if (path === '/') {
 	}
 	contactElement.classList.add('active');
 	filters.style.display = 'none';
+} else if (path == '/exp/') {
+	const expElement = document.getElementById('exp');
+	const sidebarElements = document.getElementsByClassName('sidebar-link');
+	for (const element of sidebarElements) {
+		element.className = 'sidebar-link';
+	}
+	expElement.classList.add('active');
+	filters.style.display = 'none';
 } else {
 	filters.style.display = 'none';
 }

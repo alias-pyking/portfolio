@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from projects.views import Project
-from .models import AboutDescription, ContactDescription
+from .models import AboutDescription, ContactDescription,Experience
 from .forms import ContactForm
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
@@ -20,6 +20,14 @@ class AboutView(TemplateView):
 		context['about'] = AboutDescription.objects.latest('timestamp')
 		return context
 
+class ExperienceView(TemplateView):
+	template_name = 'experience.html'
+	context_object_name = 'experience'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['experiences'] = Experience.objects.all()
+		return context
 
 def contact(request):
 	form_class = ContactForm

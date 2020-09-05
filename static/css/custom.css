@@ -359,7 +359,6 @@ a{
 	.sidebar .closebtn{
 		position: absolute;
 		top: 0;
-		font-weight: bolder;
 		right: 25px;
 		font-size: 36px;
 		margin-left: 50px;
@@ -428,6 +427,7 @@ a{
 		right: 25px;
 		font-size: 36px;
 		margin-left: 50px;
+		margin-bottom: 10px;
 	}
 	.top-bar{
 		display: flex;
@@ -488,6 +488,7 @@ a{
 		right: 25px;
 		font-size: 36px;
 		margin-left: 50px;
+		margin-bottom: 10px;
 	}
    .portfolio-projects{
 	   display: grid;
