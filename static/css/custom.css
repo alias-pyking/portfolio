@@ -162,6 +162,7 @@ a{
 	display:grid;
 	grid-template-columns: auto auto auto;
 	gap: 40px;
+	justify-content: center;
 }
 .sidebar{
 	height: 100vh;
@@ -170,7 +171,7 @@ a{
 	top:0;
 	left: 0;
 	z-index: 1;
-	transition: 0.3s;
+	transition: 0.5s;
 	display: grid;
 	grid-template-rows: 35vh 20vh auto;
 }
@@ -305,7 +306,7 @@ button:active{
 }
 .menu:active{
 	transform: rotate(-90deg);
-	transition: 0.3s;
+	transition: 0.2s;
 }
 .menu:focus{
 	outline:none;
@@ -404,7 +405,7 @@ button:active{
 	}
 	.project{
 		width:42vw;
-		height: 400px;
+		height: auto;
 	}
 	.menu{
 		display: block;
@@ -539,7 +540,7 @@ button:active{
    }
    .portfolio{
 		margin-left: 0;
-		width: 90vw;
+		width: 98vw;
 		padding:0;
 	}
 }
