@@ -5,7 +5,10 @@ select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-
+/*body{
+	background: #C7DBFF!important;
+	background-color: #C7DBFF;
+}*/
 
 /* Image Slider css */
 
@@ -116,16 +119,20 @@ alert-warning{
 	color: black;
 }
 .card{
-	box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
-	padding:16px;
-	transition: all 0.3s ease-in-out;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+	padding:0px;
+	transition: .5s;
 }
 .card:hover{
-	transform: scale(1.05);
+	box-shadow: 0px 30px 30px rgba(0,0,0,0.2);
+	transform: scale(1.02);
 }
 /* .card:hover .overlay{
 	opacity: 1;
 } */
+.project-text{
+	padding:10px;
+}
 .project img{
 	transition: all 0.3s ease-in-out;
 }
@@ -147,7 +154,7 @@ alert-warning{
 
 a{
 	text-decoration:none;
-	color: #ed6663;	
+	color: #50507F;
 }
 
 .portfolio-projects{
@@ -163,12 +170,15 @@ a{
 	top:0;
 	left: 0;
 	z-index: 1;
-	transition: 0.5s;
+	transition: 0.3s;
 	display: grid;
 	grid-template-rows: 35vh 20vh auto;
 }
 .sidebar .closebtn {
 	display: none;
+	color: #fdfdfd;
+	font-size: large;
+	font-weight: bolder;
 }
 .project-link{
 	font-size: 25px;
@@ -176,8 +186,8 @@ a{
 	font-weight: bold;
 }
 .project-link:hover{
-	border-bottom: 1px dotted #ed6663;
-	transition: 0.8s;
+	border-bottom: 1px dotted #50507F;
+	transition: 0.5s;
 }
 .sidebar-links a {
 	padding: 8px 8px 8px 32px;
@@ -207,14 +217,14 @@ a{
 	margin: 10px;
 }
 .contact-links a:hover{
-	color: #ed6663;
-	border:1px solid #ed6663;
+	color: #50507F;
+	border:1px solid #50507F;
 }
 .profile{
 	display: block;
 	flex-direction: row;
 	padding: 16px;
-	background:#ed6663;
+	background:#50507F;
 	color:#fdfdfd;
 }
 .profile a{
@@ -226,7 +236,7 @@ a{
 /* Active/current link */
 
 .sidebar-links a.active {
-	color: #ed6663;
+	color: #50507F;
 	font-weight: bolder;
 }
 
@@ -246,24 +256,32 @@ a{
 	display:flex;
 	justify-content: space-evenly;
 	padding-top: 8px;
-	height: 50px;
+	height: 35px;
 	padding-bottom: 5px;
 }
 .badge{
 	cursor: pointer;
-	color:#ed6663;
-	border:1px solid #ed6663;
+	color:#50507F;
+	border:1px solid #50507F;
 	display:block;
 	background:transparent;
 	outline: none;
 	height:25px;
 }
 
+button{
+	transition: .3s;
+	transform: scale(1);
 
+}
+
+button:active{
+	transform: scale(1.6);
+}
 
 
 .navbar button.active{
-	background:#ed6663;
+	background:#50507F;
 	color: white;
 	outline: none;
 }
@@ -273,7 +291,7 @@ a{
 }
 .menu div{
 	height: 4px;
-	background-color:#ed6663;
+	background-color:#50507F;
 	margin: 5px 0;
 	border-radius: 25px;
 }
@@ -284,6 +302,10 @@ a{
 	border: none;
 	outline: none;
 	background:transparent;
+}
+.menu:active{
+	transform: rotate(-90deg);
+	transition: 0.3s;
 }
 .menu:focus{
 	outline:none;
@@ -373,7 +395,7 @@ a{
 		left: 0;
 		background: #fdfdfd;
 		z-index: 1;
-	}	
+	}
 	.portfolio-projects{
 		display: grid;
 		grid-template-columns: auto auto;
@@ -438,7 +460,7 @@ a{
 		left: 0;
 		background: #fdfdfd;
 		z-index: 1;
-	}	
+	}
 	.portfolio-projects{
 		display: grid;
 		grid-template-columns: auto auto;
@@ -505,12 +527,12 @@ a{
 		left: 0;
 		background: #fdfdfd;
 		z-index: 1;
-	}	
+	}
 
    .project{
 	   width: 90vw;
 	   height: 400px;
-   } 
+   }
    .menu{
 	   display: block;
 	   margin-left: 10px;
