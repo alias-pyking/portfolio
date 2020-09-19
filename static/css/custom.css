@@ -303,8 +303,12 @@ button:active{
 	border: none;
 	outline: none;
 	background:transparent;
+	transition: all .2s;
 }
 .menu:active{
+	transform: rotate(-90deg);
+}
+.menu:focus{
 	transform: rotate(-90deg);
 	transition: 0.2s;
 }
@@ -478,7 +482,7 @@ button:active{
 	}
 	.portfolio{
 		margin-left: 0;
-		width: 95vw;
+		width: 98vw;
 		padding:0;
 	}
 }
@@ -531,12 +535,12 @@ button:active{
 	}
 
    .project{
-	   width: 90vw;
+	   width: 95vw;
 	   height: auto;
    }
    .menu{
 	   display: block;
-	   margin-left: 10px;
+	   margin-left: 5px;
    }
    .portfolio{
 		margin-left: 0;
