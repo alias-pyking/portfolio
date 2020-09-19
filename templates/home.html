@@ -8,13 +8,15 @@
 	{% for project in projects %}
 	<div class="project card {% if project.classes %} {{ project.classes}} {% endif %}"> 
 		<a href="{{ project.get_absolute_url }}">
+			<div class="image">
 			<img src="{{ project.thum.url }}">
+			</div>
 		</a>
-		<div class="box-masonry-text"> 
+		<div class="project-text"> 
 			<h4> <a class="project-link"  href="{{ project.get_absolute_url }}">{{ project.title }} </a></h4>
 			
-			<div class="box-masonry-desription">
-			<p>{{ project.description }} </p>
+			<div class="project-description">
+				<p>{{ project.description }} </p>
 			</div>
 		</div>
 	</div>
