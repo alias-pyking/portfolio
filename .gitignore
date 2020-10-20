@@ -4,3 +4,5 @@ port
 port/
 media
 media/
+venv/
+env/
