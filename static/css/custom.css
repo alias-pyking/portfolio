@@ -85,6 +85,7 @@ p{
 .project{
 	width:20vw;
 	height: fit-content;
+	max-height: 600px;
 	display: block;
 }
 .text-content{

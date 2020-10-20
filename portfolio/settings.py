@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['shubhamsks.pythonanywhere.com', 'localhost','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap_admin', 
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -173,11 +173,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = 'https://{0}/{1}/'.format(AWS_S3_CUSTOM_DOMAIN, AWS_STATICFILES_LOCATION)
-
 STATICFILES_STORAGE = 'portfolio.storage_backends.StaticStorage'
 
 DEFAULT_FILE_STORAGE = 'portfolio.storage_backends.MediaStorage'
 
-
-# Bootstrap admin
-BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
