@@ -20,6 +20,8 @@ For using this portfolio for yourself you can follow below guidelines.
       SECRET_KEY=<YOUR-SECRET-KEY>
       EMAIL=<YOUR EMAIL>
       EMAIL_PASSWORD=<YOUR-EMAIL-PASSWORD>
+      AWS_ACCESS_KEY_ID=<YOUR AWS ACCESS KEY ID>
+      AWS_SECRET_ACCESS_KEY=<YOUR AWS SECRET ACCESS KEY>
      ```
     - Note that this project uses above file email for sending you the email from this portfolio website. So you have to set up your email for this.
       you can google "django smtp gmail".

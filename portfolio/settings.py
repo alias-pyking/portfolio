@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['shubhamsks.pythonanywhere.com', 'localhost','127.0.0.1']
 
@@ -126,8 +126,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles') # this is for production serving staticfiles
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')] # local serving staitc files
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles') # this is for production serving staticfiles
+# STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')] # local serving staitc files
 
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -144,3 +144,35 @@ EMAIL_PORT = 587
 
 # crispy form settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# STATIC FILES ON AWS S3
+
+STATIC_URL = '/static/'
+
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'sk-portfolio-s3'
+
+AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_STATICFILES_LOCATION = 'static'
+AWS_MEDIAFILES_LOCATION = 'media/'
+
+AWS_S3_HOST = 's3.ap-south-1.amazonaws.com'
+AWS_S3_REGION_NAME="ap-south-1"
+AWS_QUERYSTRING_AUTH = True
+AWS_DEFAULT_ACL = None
+AWS_S3_FILE_OVERWRITE = False
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+STATIC_URL = 'https://{0}/{1}/'.format(AWS_S3_CUSTOM_DOMAIN, AWS_STATICFILES_LOCATION)
+
+STATICFILES_STORAGE = 'portfolio.storage_backends.StaticStorage'
+
+DEFAULT_FILE_STORAGE = 'portfolio.storage_backends.MediaStorage'

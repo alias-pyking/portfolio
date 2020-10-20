@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 def upload_location(instance, filename):
 	print(instance)
-	return "{}/{}".format(instance.pk, filename)
+	return "projects/{}".format(filename)
 
 
 
@@ -27,19 +27,24 @@ class Project(models.Model):
 		content = self.content
 		markdown_text = markdown(content)
 		return mark_safe(markdown_text)
-	def save(self, *args, **kwargs):
-		super().save(*args, **kwargs)
-		img = Image.open(self.thum.path)
-		img = img.resize((600, 400))
-		img.save(self.thum.path)
+
+	# def save(self, *args, **kwargs):
+	# 	super().save(*args, **kwargs)
+	# 	img = Image.open(self.thum.path)
+	# 	img = img.resize((600, 400))
+	# 	img.save(self.thum.path)
 
 class Images(models.Model):
 	project = models.ForeignKey(Project, on_delete= models.CASCADE)
 	image = models.ImageField(upload_to=upload_location, null=True, blank=True)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
-	def save(self, *args, **kwargs):
-		super().save(*args, **kwargs)
-		img = Image.open(self.image.path)
-		img = img.resize((900, 400))
-		img.save(self.image.path)
+
+	def __str__(self):
+		return self.image.name
+
+	# def save(self, *args, **kwargs):
+	# 	super().save(*args, **kwargs)
+	# 	img = Image.open(self.image.path)
+	# 	img = img.resize((900, 400))
+	# 	img.save(self.image.path)
 
