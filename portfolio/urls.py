@@ -17,11 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+
+admin.site.site_header = 'SK Portfolio Admin'
+admin.site.index_title = 'SK Portfolio Administration'
+admin.site.site_title = 'SK Portfolio'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
     path('projects/', include('projects.urls')),
 ]
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
